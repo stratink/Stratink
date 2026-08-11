@@ -1,3 +1,3 @@
-# Stratink Prototype EN
+# Stratink Prototype ZH
 
-Clickable Stratink prototype in en.
+Clickable Stratink prototype in zh.
