@@ -1,1 +1,3 @@
-Chinese Prototype
+# Stratink Prototype ZH
+
+Clickable Stratink prototype in zh.
