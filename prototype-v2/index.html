@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stratink Prototype v2</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="left-panel">
+      <img class="brand-logo" src="assets/stratink-logo.png" alt="Stratink logo" />
+      <p class="small-label">Clickable Prototype v2</p>
+      <h1>Resident app + admin dashboard</h1>
+      <p class="panel-copy">A modern property-management prototype inspired by the Stratink presentation style: blue header, clean phone UI, rounded cards, and simple resident-first actions.</p>
+      <div class="panel-actions">
+        <button data-screen="residentHome">Resident App</button>
+        <button data-screen="adminHome">Admin Dashboard</button>
+        <button data-screen="login">Start Over</button>
+      </div>
+    </section>
+
+    <section class="stage">
+      <div class="phone-frame">
+        <div class="phone-speaker"></div>
+
+        <section id="login" class="screen active">
+          <div class="login-screen">
+            <img src="assets/stratink-logo.png" alt="Stratink logo" class="login-logo" />
+            <h2>Welcome Home</h2>
+            <p>Sign in to your building portal</p>
+            <div class="login-card">
+              <label>Email</label>
+              <input value="resident@stratink.ca" />
+              <label>Password</label>
+              <input type="password" value="password" />
+              <button class="primary-btn" data-screen="residentHome">Resident Login</button>
+              <button class="outline-btn" data-screen="adminHome">Admin Login</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="residentHome" class="screen">
+          <header class="app-header blue-gradient">
+            <img src="assets/stratink-logo.png" alt="Stratink logo" class="app-logo" />
+            <div class="header-line">
+              <div>
+                <h2>Welcome Home</h2>
+                <p>Unit Dashboard</p>
+              </div>
+              <button class="bell">●</button>
+            </div>
+          </header>
+          <div class="content scrollable">
+            <div class="tile-grid">
+              <button class="tile cyan" data-screen="maintenance"><span class="tile-icon">R</span><b>Report<br/>Maintenance</b><small>Submit & track</small></button>
+              <button class="tile blue" data-screen="notices"><span class="tile-icon">N</span><b>Notices<br/>& Updates</b><small>Building news</small></button>
+              <button class="tile green" data-screen="parking"><span class="tile-icon">V</span><b>Visitor<br/>Parking</b><small>Register guest</small></button>
+              <button class="tile purple" data-screen="documents"><span class="tile-icon">D</span><b>Documents<br/>& Bylaws</b><small>Forms & files</small></button>
+              <button class="tile teal" data-screen="amenities"><span class="tile-icon">A</span><b>Amenity<br/>Booking</b><small>Reserve spaces</small></button>
+              <button class="tile navy" data-screen="move"><span class="tile-icon">M</span><b>Move In<br/>Move Out</b><small>Elevator request</small></button>
+              <button class="tile sky" data-screen="packages"><span class="tile-icon">P</span><b>Package<br/>Tracking</b><small>Pickup status</small></button>
+              <button class="tile lime" data-screen="marketplace"><span class="tile-icon">S</span><b>Service<br/>Marketplace</b><small>Book providers</small></button>
+            </div>
+            <section class="updates-card">
+              <h3>Recent Updates</h3>
+              <div class="update-row"><div class="thumb building"></div><div><b>Fire inspection scheduled</b><p>Access notice posted for Aug 20.</p></div></div>
+              <div class="update-row"><div class="thumb parking"></div><div><b>Visitor parking reminder</b><p>Guest permits must be registered.</p></div></div>
+            </section>
+          </div>
+          <nav class="bottom-nav"><button class="active" data-screen="residentHome">Home</button><button data-screen="maintenance">Requests</button><button data-screen="documents">Docs</button><button data-screen="marketplace">More</button></nav>
+        </section>
+
+        <section id="maintenance" class="screen">
+          <header class="form-header"><button class="back" data-screen="residentHome">‹</button><h2>Report Maintenance</h2></header>
+          <div class="form-content">
+            <label>Category</label><div class="input-box">Common area</div>
+            <label>Priority</label><div class="input-box">Medium</div>
+            <label>Description</label><div class="input-box">Lobby door issue</div>
+            <label>Photo</label><div class="input-box">Optional</div>
+            <button class="submit-large">Submit request</button>
+          </div>
+        </section>
+
+        <section id="documents" class="screen"><AppPage title="Documents & Bylaws" back="residentHome"></AppPage><div class="content"><button class="list-item">Building Bylaws <span>PDF</span></button><button class="list-item">AGM Minutes <span>PDF</span></button><button class="list-item">Move In Form <span>PDF</span></button><button class="list-item">Amenity Rules <span>PDF</span></button></div></section>
+        <section id="notices" class="screen"><AppPage title="Notices & Updates" back="residentHome"></AppPage><div class="content"><div class="notice-card"><b>Fire Inspection</b><p>Scheduled for August 20.</p></div><div class="notice-card"><b>Elevator Maintenance</b><p>Elevator 2 offline from 9 AM to 1 PM.</p></div></div></section>
+        <section id="parking" class="screen"><AppPage title="Visitor Parking" back="residentHome"></AppPage><div class="form-content"><label>Guest Name</label><div class="input-box">Alex Visitor</div><label>License Plate</label><div class="input-box">ABC 123</div><label>Visit Date</label><div class="input-box">Tomorrow</div><button class="submit-large">Register visitor</button></div></section>
+        <section id="amenities" class="screen"><AppPage title="Amenity Booking" back="residentHome"></AppPage><div class="content"><button class="list-item">Gym Room <span>Available</span></button><button class="list-item">Party Room <span>Request</span></button><button class="list-item">Meeting Room <span>Request</span></button><button class="submit-large">Request booking</button></div></section>
+        <section id="move" class="screen"><AppPage title="Move In / Move Out" back="residentHome"></AppPage><div class="form-content"><label>Move Type</label><div class="input-box">Move In</div><label>Requested Date</label><div class="input-box">August 30, 2026</div><label>Elevator Time</label><div class="input-box">10:00 AM - 1:00 PM</div><button class="submit-large">Submit move request</button></div></section>
+        <section id="packages" class="screen"><AppPage title="Package Tracking" back="residentHome"></AppPage><div class="content"><div class="notice-card"><b>Package Received</b><p>Amazon package ready for pickup.</p></div><div class="notice-card muted-card"><b>Picked Up</b><p>Canada Post package completed.</p></div></div></section>
+        <section id="marketplace" class="screen"><AppPage title="Service Marketplace" back="residentHome"></AppPage><div class="content"><div class="market-tabs"><button class="selected">Services</button><button>Buy/Sell</button><button>Lost</button></div><div class="service-card"><b>Cleaning Service</b><p>Verified provider · from $150</p><span>Book now</span></div><div class="service-card"><b>Movers</b><p>Move in/out support</p><span>Request quote</span></div><div class="service-card"><b>Handyman</b><p>Repairs and small tasks</p><span>View providers</span></div></div></section>
+
+        <section id="adminHome" class="screen">
+          <header class="app-header admin-gradient">
+            <img src="assets/stratink-logo.png" alt="Stratink logo" class="app-logo" />
+            <div class="header-line"><div><h2>Admin Dashboard</h2><p>Building Manager Portal</p></div><button class="bell">●</button></div>
+          </header>
+          <div class="content scrollable">
+            <div class="admin-stats"><div><b>18</b><span>Requests</span></div><div><b>72%</b><span>Active Residents</span></div></div>
+            <div class="tile-grid admin-tiles">
+              <button class="tile blue" data-screen="adminMaintenance"><span class="tile-icon">Q</span><b>Maintenance<br/>Queue</b><small>Assign work</small></button>
+              <button class="tile green" data-screen="adminNotices"><span class="tile-icon">N</span><b>Notices<br/>& Alerts</b><small>Publish updates</small></button>
+              <button class="tile purple" data-screen="adminDocs"><span class="tile-icon">D</span><b>Document<br/>Library</b><small>Manage files</small></button>
+              <button class="tile teal" data-screen="adminResidents"><span class="tile-icon">U</span><b>Resident<br/>Directory</b><small>Units & access</small></button>
+              <button class="tile navy" data-screen="adminMarketplace"><span class="tile-icon">M</span><b>Marketplace<br/>Review</b><small>Moderation</small></button>
+              <button class="tile lime" data-screen="adminReports"><span class="tile-icon">R</span><b>Reports<br/>& Insights</b><small>Activity data</small></button>
+            </div>
+          </div>
+          <nav class="bottom-nav"><button data-screen="residentHome">Resident</button><button class="active" data-screen="adminHome">Admin</button><button data-screen="adminMaintenance">Queue</button><button data-screen="login">Logout</button></nav>
+        </section>
+
+        <section id="adminMaintenance" class="screen"><AppPage title="Maintenance Queue" back="adminHome"></AppPage><div class="content"><div class="notice-card"><b>Lobby door issue</b><p>Unit 304 · Medium Priority</p><span>Assign vendor</span></div><div class="notice-card"><b>Hallway light</b><p>Common area · Submitted</p><span>Update status</span></div></div></section>
+        <section id="adminNotices" class="screen"><AppPage title="Notice Management" back="adminHome"></AppPage><div class="form-content"><label>Title</label><div class="input-box">Fire Inspection</div><label>Message</label><div class="input-box tall">Scheduled for August 20. Please allow suite access if required.</div><button class="submit-large">Publish notice</button></div></section>
+        <section id="adminDocs" class="screen"><AppPage title="Document Library" back="adminHome"></AppPage><div class="content"><button class="list-item">Upload Bylaws <span>New</span></button><button class="list-item">Upload AGM Minutes <span>New</span></button><button class="list-item">Upload Forms <span>New</span></button></div></section>
+        <section id="adminResidents" class="screen"><AppPage title="Resident Directory" back="adminHome"></AppPage><div class="content"><button class="list-item">Unit 304 <span>Active</span></button><button class="list-item">Unit 502 <span>Active</span></button><button class="list-item">Unit 612 <span>Pending</span></button></div></section>
+        <section id="adminMarketplace" class="screen"><AppPage title="Marketplace Review" back="adminHome"></AppPage><div class="content"><div class="notice-card"><b>Pending Listing</b><p>Dining table · Unit 304</p><span>Approve / Reject</span></div></div></section>
+        <section id="adminReports" class="screen"><AppPage title="Reports" back="adminHome"></AppPage><div class="content"><div class="admin-stats big"><div><b>18</b><span>Requests</span></div><div><b>9</b><span>Bookings</span></div></div><div class="notice-card"><b>Resident Engagement</b><p>Most used modules: Notices, Documents, Maintenance.</p></div></div></section>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
