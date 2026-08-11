@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stratink Prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="side-panel">
+      <div class="brand-block">
+        <div class="logo-mark">
+          <div class="bar b1"></div>
+          <div class="bar b2"></div>
+          <div class="bar b3"></div>
+          <div class="s-curve"></div>
+        </div>
+        <div>
+          <h1>STRAT<span>INK</span></h1>
+          <p>Community living platform</p>
+        </div>
+      </div>
+      <div class="side-card">
+        <p class="eyebrow">Prototype</p>
+        <h2>Resident App + Admin Dashboard</h2>
+        <p>Clickable concept for property managers, councils, and pilot buildings.</p>
+      </div>
+      <nav class="desktop-nav">
+        <button data-screen="login">Login</button>
+        <button data-screen="residentDashboard">Resident Dashboard</button>
+        <button data-screen="adminDashboard">Admin Dashboard</button>
+      </nav>
+    </aside>
+
+    <main class="prototype-area">
+      <div class="device">
+        <section id="login" class="screen active">
+          <div class="screen-header center">
+            <div class="mini-logo"></div>
+            <h2>STRAT<span>INK</span></h2>
+            <p>Welcome to your building portal</p>
+          </div>
+          <div class="form-card">
+            <label>Email</label>
+            <input value="resident@stratink.ca" />
+            <label>Password</label>
+            <input type="password" value="password" />
+            <button class="primary full" data-screen="residentDashboard">Resident Login</button>
+            <button class="secondary full" data-screen="adminDashboard">Admin Login</button>
+          </div>
+          <p class="small-center">Prototype only. No real login required.</p>
+        </section>
+
+        <section id="residentDashboard" class="screen">
+          <div class="topbar">
+            <button class="back ghost" data-screen="login">‹</button>
+            <div>
+              <h2>STRAT<span>INK</span></h2>
+              <p>123 Main Street</p>
+            </div>
+            <div class="avatar">S</div>
+          </div>
+          <div class="welcome-card">
+            <p class="eyebrow">Resident Dashboard</p>
+            <h3>Welcome, Resident</h3>
+            <p>Manage building services, requests, bookings, documents, and community activity.</p>
+          </div>
+          <div class="module-grid">
+            <button data-screen="maintenance">🔧<span>Maintenance</span></button>
+            <button data-screen="documents">📄<span>Documents</span></button>
+            <button data-screen="parking">🚗<span>Visitor Parking</span></button>
+            <button data-screen="amenities">🏢<span>Amenities</span></button>
+            <button data-screen="move">🚚<span>Move In/Out</span></button>
+            <button data-screen="packages">📦<span>Packages</span></button>
+            <button data-screen="marketplace">🛒<span>Marketplace</span></button>
+            <button data-screen="notices">📢<span>Notices</span></button>
+          </div>
+          <div class="status-card">
+            <div><span class="stat">2</span><p>Open Requests</p></div>
+            <div><span class="stat green">Gym</span><p>Tomorrow 7:00 PM</p></div>
+          </div>
+        </section>
+
+        <section id="maintenance" class="screen">
+          <Header data-title="Maintenance Requests"></Header>
+          <div class="page-title"><h3>Submit a request</h3><p>Report building or unit issues to management.</p></div>
+          <div class="form-card compact">
+            <label>Issue Type</label><select><option>Plumbing</option><option>Electrical</option><option>Common Area</option></select>
+            <label>Priority</label><select><option>Normal</option><option>Urgent</option></select>
+            <label>Description</label><textarea>Kitchen sink is leaking under the cabinet.</textarea>
+            <button class="upload">Upload Photo</button>
+            <button class="primary full">Submit Request</button>
+          </div>
+          <div class="list-card"><h4>My Requests</h4><p><b>Leak under sink</b><br><span>In Progress</span></p><p><b>Hallway light</b><br><span>Submitted</span></p></div>
+        </section>
+
+        <section id="documents" class="screen">
+          <Header data-title="Documents & Bylaws"></Header>
+          <div class="search-box">Search documents...</div>
+          <div class="doc-list">
+            <button>Building Bylaws <span>PDF</span></button>
+            <button>AGM Minutes <span>PDF</span></button>
+            <button>Move In Form <span>PDF</span></button>
+            <button>Amenity Rules <span>PDF</span></button>
+          </div>
+        </section>
+
+        <section id="parking" class="screen">
+          <Header data-title="Visitor Parking"></Header>
+          <div class="form-card compact">
+            <label>Guest Name</label><input value="Alex Visitor" />
+            <label>License Plate</label><input value="ABC 123" />
+            <label>Visit Date</label><input value="Tomorrow" />
+            <button class="primary full">Register Visitor</button>
+          </div>
+          <div class="status-card single"><span class="stat green">Active</span><p>1 visitor parking registration</p></div>
+        </section>
+
+        <section id="amenities" class="screen">
+          <Header data-title="Amenity Booking"></Header>
+          <div class="doc-list">
+            <button>Gym Room <span>Available</span></button>
+            <button>Party Room <span>Request</span></button>
+            <button>Meeting Room <span>Request</span></button>
+            <button>Elevator Booking <span>Request</span></button>
+          </div>
+          <button class="primary full bottom-action">Request Booking</button>
+        </section>
+
+        <section id="move" class="screen">
+          <Header data-title="Move In / Move Out"></Header>
+          <div class="form-card compact">
+            <label>Move Type</label><select><option>Move In</option><option>Move Out</option></select>
+            <label>Requested Date</label><input value="August 30, 2026" />
+            <label>Elevator Time</label><input value="10:00 AM - 1:00 PM" />
+            <button class="primary full">Submit Move Request</button>
+          </div>
+          <div class="list-card"><h4>Optional Services</h4><p>Movers · Move-out cleaning · Junk removal · Handyman</p></div>
+        </section>
+
+        <section id="packages" class="screen">
+          <Header data-title="Package Tracking"></Header>
+          <div class="list-card package"><h4>Package Received</h4><p>Courier: Amazon</p><span>Ready for pickup</span></div>
+          <div class="list-card package"><h4>Package Picked Up</h4><p>Courier: Canada Post</p><span class="muted">Completed yesterday</span></div>
+          <button class="primary full bottom-action">Confirm Pickup</button>
+        </section>
+
+        <section id="marketplace" class="screen">
+          <Header data-title="Community Marketplace"></Header>
+          <div class="tabs"><button class="active-tab">Buy/Sell</button><button>Services</button><button>Lost & Found</button></div>
+          <div class="market-card"><h4>Dining Table</h4><p>Unit 304 · $250</p><span>View Listing</span></div>
+          <div class="market-card"><h4>Cleaning Service</h4><p>Verified Provider · from $150</p><span>Book Service</span></div>
+          <div class="market-card"><h4>Moving Boxes</h4><p>Unit 612 · Free</p><span>Message Resident</span></div>
+        </section>
+
+        <section id="notices" class="screen">
+          <Header data-title="Notice Board"></Header>
+          <div class="list-card"><h4>Fire Inspection</h4><p>Scheduled for August 20. Please allow access if required.</p></div>
+          <div class="list-card"><h4>Elevator Maintenance</h4><p>Elevator 2 will be offline from 9 AM to 1 PM.</p></div>
+        </section>
+
+        <section id="adminDashboard" class="screen">
+          <div class="topbar admin-topbar">
+            <button class="back ghost" data-screen="login">‹</button>
+            <div><h2>STRATINK ADMIN</h2><p>Manager Portal</p></div>
+            <div class="avatar green-bg">A</div>
+          </div>
+          <div class="welcome-card admin-card"><p class="eyebrow">Admin Dashboard</p><h3>Building Operations</h3><p>Review resident activity, requests, documents, bookings, and marketplace items.</p></div>
+          <div class="module-grid admin-grid">
+            <button data-screen="adminMaintenance">🧰<span>Maintenance Queue</span></button>
+            <button data-screen="adminResidents">👥<span>Residents</span></button>
+            <button data-screen="adminNotices">📢<span>Notices</span></button>
+            <button data-screen="adminDocs">📁<span>Documents</span></button>
+            <button data-screen="adminMarketplace">🛒<span>Marketplace Review</span></button>
+            <button data-screen="adminReports">📊<span>Reports</span></button>
+          </div>
+        </section>
+
+        <section id="adminMaintenance" class="screen"><Header data-title="Maintenance Queue"></Header><div class="list-card"><h4>Leak under sink</h4><p>Unit 502 · Priority Normal</p><span>Assign contractor</span></div><div class="list-card"><h4>Hallway light</h4><p>Common Area · Submitted</p><span>Update status</span></div></section>
+        <section id="adminResidents" class="screen"><Header data-title="Resident Management"></Header><div class="doc-list"><button>Unit 304 · Active</button><button>Unit 502 · Active</button><button>Unit 612 · Pending update</button></div></section>
+        <section id="adminNotices" class="screen"><Header data-title="Notice Management"></Header><div class="form-card compact"><label>Notice Title</label><input value="Fire Inspection"/><label>Message</label><textarea>Inspection scheduled for August 20.</textarea><button class="primary full">Publish Notice</button></div></section>
+        <section id="adminDocs" class="screen"><Header data-title="Document Library"></Header><div class="doc-list"><button>Upload Bylaws</button><button>Upload AGM Minutes</button><button>Upload Forms</button></div></section>
+        <section id="adminMarketplace" class="screen"><Header data-title="Marketplace Review"></Header><div class="list-card"><h4>Pending Listing</h4><p>Dining Table · Unit 304</p><span>Approve / Reject</span></div></section>
+        <section id="adminReports" class="screen"><Header data-title="Reports"></Header><div class="status-card"><div><span class="stat">18</span><p>Requests</p></div><div><span class="stat green">72%</span><p>Active Residents</p></div></div></section>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
