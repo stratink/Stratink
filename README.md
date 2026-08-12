@@ -1,16 +1,19 @@
-## Hi there 👋
+# Stratink Multilingual Clickable App
 
-<!--
-**stratink/Stratink** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+One clickable prototype app with one language switcher for:
+- English
+- Arabic
+- Mandarin Chinese
 
-Here are some ideas to get you started:
+## Upload to GitHub
+Create a folder named `prototype-multilingual` and upload:
+- index.html
+- styles.css
+- script.js
+- README.md
+- assets/stratink-logo.png
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Live URL after upload:
+https://stratink.github.io/Stratink/prototype-multilingual/
+
+© Stratink Technologies Inc. All Rights Reserved.
